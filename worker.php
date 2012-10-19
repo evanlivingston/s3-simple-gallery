@@ -28,7 +28,7 @@ if ($size > 0) {
 		$job = (get_message());
 		$image = $job->Body;
 		if (stristr($image, 'jpg') || stristr($image, 'png')) {
-			create_thumb($image);
+			//create_thumb($image);
 			$response = $sdb->put_attributes($conf['COLLECTION_DB'], $image, array(
 						'location' => $image,
 						));

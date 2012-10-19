@@ -122,6 +122,7 @@ function create_thumb($object) {
 									'acl' => AmazonS3::ACL_PUBLIC, 
 									'contentType' => 'image/png',));
 			unlink($tempfile);
+			unlink('/tmp/' .urlencode(basename($object)));
 	}
 }
 

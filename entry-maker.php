@@ -4,7 +4,6 @@ require_once 'config.php';
 
 // This script will create an SQS queue and fill it will all items from the photo library.
 
-global $conf;
 $sqs = new AmazonSQS();
 
 // Here we take chunks of the collection, chunk them further and send them to an SQS queue
@@ -28,7 +27,7 @@ function create_queue_items($queue, $set) {
 // This function gets a list of all items in a bucket and chunks them into managable pieces
 // and hands off the pieces to create_queue_items
 function proccess_collection($bucket) {
-	global $sqs;
+	global $sqs, $conf;
 
 	$response = $sqs->create_queue($conf['JOB_QUEUE']);
 	$queue = $response->body->CreateQueueResult->QueueUrl;
