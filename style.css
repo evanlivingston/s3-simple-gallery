@@ -1,0 +1,60 @@
+body {
+  background-color: #555;
+}
+.header {
+  height: 7%;
+  background-color: #333;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  margin: 0px 0px 7px;
+  z-index: 10;
+  -moz-box-shadow: 1px 2px 11px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 11px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 11px rgba(0,0,0,.5);
+}
+.photos {
+  top: 8%;
+  position: relative;
+}
+
+.toolbox {
+  font-family: sans-serif;
+  font-size: 13px;
+  opacity: .25;
+  background-color: #333;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  border-color: #c2c2c2;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-style: solid;
+  border-bottom-left-radius: 4px;
+  padding-bottom: 3px;
+  -webkit-transition: opacity .2s ease-out;
+  cursor: default;
+  -webkit-user-select: none;
+  padding-left: 2px;
+}
+
+.toolbox:hover {
+  opacity: 1;
+}
+
+.toolbox > * {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.toolbox > a {
+  padding-left: 5px;
+}
+
+.toolbox > img {
+	height: 14px;14pxvertical-align: bottom;
+	cursor: pointer;
+}

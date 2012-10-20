@@ -1,5 +1,6 @@
 <head>
-    <title>Hello World</title>
+    <title>Evan Livingston | Photos</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript">  
 
@@ -19,7 +20,7 @@
 			console.log(data);
 			$.each(data, function(i, item) {
 				console.log(item);
-				$("body").append('<a href="' + item.location + '"> <img src="' + item.thumb + '" alt="some_text"></a>');
+				$(".photos").append('<a href="' + item.location + '"> <img src="' + item.thumb + '" alt="some_text"></a>');
 			});
 		}
 		});
@@ -28,5 +29,12 @@
    </script>  
 </head>
 <body>
+	<div class=header>
+		<div class=toolbox>
+			<a href="#" id="thelink">Settings</a>
+		</div> 
+	</div>
+	<div class=photos>
+	</div>
 </body>
 </html>
