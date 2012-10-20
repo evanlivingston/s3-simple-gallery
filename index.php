@@ -1,18 +1,32 @@
-<?php
-require_once 'functions.php';
+<head>
+    <title>Hello World</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">  
 
-$thumbs = 'evanlivingston.photos.thumbs';
-$collection = 'evanlivingston.photos';
-$images = construct_links($collection);
-
-
-
-
-// He we loop through build the html to display all images
-foreach ($images['images'] as $image) {
-    echo "<a href='https://s3.amazonaws.com/$collection/$image'><img src='https://s3.amazonaws.com/$thumbs/$image' alt='some_text'></a>";
-    //create_thumb($image);
-}
+	// Lets do some stuff when the page is loaded
+	$(document).ready(function() {
+		get_collection_chunk();
+	}); // end document ready
 
 
-?>
+	// function to 
+	function get_collection_chunk()
+	{
+		$.ajax({
+		url : "photos.php",
+		dataType: 'json',
+		success : function (data) {
+			console.log(data);
+			$.each(data, function(i, item) {
+				console.log(item);
+				$("body").append('<a href="' + item.location + '"> <img src="' + item.thumb + '" alt="some_text"></a>');
+			});
+		}
+		});
+	} //end get_collection_chunk 
+   
+   </script>  
+</head>
+<body>
+</body>
+</html>

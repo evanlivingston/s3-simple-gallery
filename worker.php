@@ -30,7 +30,8 @@ if ($size > 0) {
 		if (stristr($image, 'jpg') || stristr($image, 'png')) {
 			//create_thumb($image);
 			$response = $sdb->put_attributes($conf['COLLECTION_DB'], $image, array(
-						'location' => $image,
+						'thumb_location' => 'https://s3.amazonaws.com/' . $conf['thumbs'] . '/' . $image,
+						'location' => 'https://s3.amazonaws.com/' . $conf['collection'] . '/' . $image, 
 						));
 		} else {
 			error_log("file - $image is not an image, removing...");
