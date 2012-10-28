@@ -34,9 +34,9 @@ if ($size > 0) {
 		$file = $message['file'];
 		$type = $message['type'];
 		$thumb = replace_extension($file, 'jpg');
-		if (stristr($file, 'jpg') ||stristr($file, 'mov') || stristr($file, 'png')) {
+		if (stristr($file, 'jpg') || stristr($file, 'mov') || stristr($file, 'png')) {
 
-			$s3->set_object_acl($conf['buckets']['thumb'], $file, AmazonS3::ACL_PUBLIC);
+			$s3->set_object_acl($conf['buckets']['thumb'], $thumb, AmazonS3::ACL_PUBLIC);
 			$s3->set_object_acl($conf['buckets'][$type], $file, AmazonS3::ACL_PUBLIC);
 			$response = $sdb->put_attributes($conf['COLLECTION_DB'], $file, array(
 						'thumb' => $conf['cdn']['thumb'] . $thumb,
@@ -45,6 +45,7 @@ if ($size > 0) {
 			));
 			//TODO only delete sqs message is response from sdb-put is ok
 			// Remove the sqs message
+		sleep(1);
 		}
 		$r = $sqs->delete_message ( $queue, $job->ReceiptHandle);
 		if ($r->isOK()) {

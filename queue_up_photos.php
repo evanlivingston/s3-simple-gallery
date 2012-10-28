@@ -42,5 +42,5 @@ function proccess_collection($type) {
 }
 
 // Let's start the proccess
-proccess_collection('photo');
+proccess_collection('video');
 ?>

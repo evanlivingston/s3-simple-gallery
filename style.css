@@ -1,6 +1,12 @@
 body {
   background-color: #555;
+  text-align: center;
 }
+
+a {
+ text-decoration: none;
+}
+
 .header {
   height: 7%;
   background-color: #333;
@@ -17,6 +23,15 @@ body {
 .photos {
   top: 8%;
   position: relative;
+  display: table;
+  width: 100%;
+}
+
+img {
+  margin: -1px; 
+  -moz-box-shadow: 1px 2px 11px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 11px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 11px rgba(0,0,0,.5);
 }
 
 .toolbox {
